@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body><br><br>
+	<button onclick="wieBenIk()">Wie ben ik?</button>
+	<script>
+			// Samet Hira
+			// Software Developer
+
+			function wieBenIk(){
+			// Vraagt naar naam
+			const NAME = prompt("Naam?");
+
+			// Vraagt naar achternaam
+			const SURNAME = prompt("Achternaam?");
+
+			// Vraag naar leeftijd
+			const AGE = prompt("Leeftijd?");
+
+
+			// Toont de antwoorden op het scherm
+			document.write("<h1>" + "Hallo, je heet " + NAME + " " + SURNAME + " en bent " + AGE + " jaar!" + "</h1>"); }
+	</script>
+	<script>
+		// Samet Hira
+		// Software Developer
+
+
+		// Titel Tafel van 3
+		document.write("<h1>" + "Tafel van 3" + "</h1>");
+		// Tafel van 3 
+		for (let num = 1; num < 11; num++){
+			document.write(num * 3 + "<br>")};
+
+		// Titel Tafel van 6
+		document.write("<h1>" + "Tafel van 6" + "</h1>");
+		// Tafel van 6
+		for (let num = 1; num < 11; num++){
+			document.write(num * 6 + "<br>")};
+
+		// Vraag: hoe kun je er op een handige manier voor zorgen dat je gemakkelijk een ander tafel kunt uitrekenen, zonder dat je al te veel wijzigingen in de code moet doen?
+		// Antwoord: Een form en variable maken voor user input, voorbeeld:
+
+		// Antwoord krijgen na klik op submit
+		function mijnAntwoord(){
+		var input = document.getElementById("number").value;
+
+		// Checken of het wel of niet een nummer is, zo wel, doorgaan met tafel 
+		if(isNaN(input) || input == ""){
+			alert("Je hebt geen nummer ingevoerd. Probeer het opnieuw.")
+		}else if(input == "0"){
+			alert("Tafel van 0 werkt niet. Probeer het opnieuw.");
+		} else {
+		document.write("<h1>" + "Tafel van " + input + "</h1>");
+		for (let num = 1; num < 11; num++){
+			document.write(num * input + "<br>")
+		}
+		}};
+
+		</script>
+
+		<!-- Input nummer van gebruiker om de tafel te berekenen -->
+		<form action="B1W3L3.html"><br>
+		Voer een nummer in om een tafel te berekenen: <input id="number" type="text"/>
+		<button onclick="mijnAntwoord()">Sturen</button>
+		</script>
+		<script>
+
+		const GETAL_EEN = 12;
+		const GETAL_TWEE = 6;
+		const GETAL_DRIE = 10;
+		const GETAL_VIER = 5;
+		const GETAL_VIJF = 12;
+
+		const OPTELLEN = (GETAL_EEN + GETAL_TWEE);
+		const VERMENIGVULDIGEN = (OPTELLEN * GETAL_DRIE);
+		const DELEN = (VERMENIGVULDIGEN / GETAL_VIER);
+		const MINNEN = (DELEN - GETAL_VIJF );
+
+		document.write("<br><br>12+6*10/5-12= " + MINNEN); 
+
+		</script>
+		<button onclick="mijnSom()">Uw eigen som berekenen</button>
+		<script>
+
+		function mijnSom(){
+
+		// Bericht dat getal met 12 begint
+		alert("Uw begin getal is 12.");
+
+		// Begin getal
+		const GETAL_EEN_INPUT = 12;
+
+		// Prompt is voor user input en while checkt of het een nummer is, zo ja, gaat die door met de tweede getal
+		var GETAL_TWEE_INPUT = prompt("Vul uw eerste getal in: ");
+		while(isNaN(GETAL_TWEE_INPUT)){
+			GETAL_TWEE_INPUT = prompt("Geen getal ingevoerd. Probeer het opnieuw: ");
+		}
+		var GETAL_DRIE_INPUT = prompt("Vul uw tweede getal in: ");
+		while(isNaN(GETAL_DRIE_INPUT)){
+			GETAL_DRIE_INPUT = prompt("Geen getal ingevoerd. Probeer het opnieuw: ");
+		}
+		var GETAL_VIER_INPUT = prompt("Vul uw derde getal in: ");
+		while(isNaN(GETAL_VIER_INPUT)){
+			GETAL_VIER_INPUT = prompt("Geen getal ingevoerd. Probeer het opnieuw: ");
+		}
+		var GETAL_VIJF_INPUT = prompt("Vul uw vierde getal in: ");
+		while(isNaN(GETAL_VIJF_INPUT)){
+			GETAL_VIJF_INPUT = prompt("Geen getal ingevoerd. Probeer het opnieuw: ");
+		}
+
+		//Berekent de som
+		const OPTELLEN_INPUT = (Number(GETAL_EEN_INPUT) + Number(GETAL_TWEE_INPUT));
+		const VERMENIGVULDIGEN_INPUT = (Number(OPTELLEN_INPUT) * Number(GETAL_DRIE_INPUT));
+		const DELEN_INPUT = (Number(VERMENIGVULDIGEN_INPUT) / Number(GETAL_VIER_INPUT));
+		const MINNEN_INPUT = (Number(DELEN_INPUT) - Number(GETAL_VIJF_INPUT));
+
+		//Toont het antwoord
+		document.write(GETAL_EEN_INPUT + "+" + GETAL_TWEE_INPUT + "*" + GETAL_DRIE_INPUT + "/" + GETAL_VIER_INPUT + "-" + GETAL_VIER_INPUT + "=  " + MINNEN_INPUT); 
+		}
+		</script>
+		<!--Kosten Pizza's-->
+		<h1> KOSTEN PIZZA'S </h1><br>
+		<b> Small: </b> €8<br>
+		<b>	Medium: </b> €10<br>
+		<b>	Large: </b> €13<br>
+		<br>
+		<button onclick="pizzaBerekenen()">Pizza bestellen</button>
+		<script>
+		function pizzaBerekenen(){
+
+		// Hoeveelheid pizza uit elk afmeting vragen
+		var SMALL_PIZZA = prompt("Hoeveel Small Size pizza's wilt u?");
+		while(isNaN(SMALL_PIZZA)){
+			SMALL_PIZZA = prompt("Geen getal ingevoerd. Probeer het opnieuw: ");
+		}
+		var MEDIUM_PIZZA = prompt("Hoeveel Medium Size pizza's wilt u?");
+		while(isNaN(MEDIUM_PIZZA)){
+			MEDIUM_PIZZA = prompt("Geen getal ingevoerd. Probeer het opnieuw: ");
+		}
+		var LARGE_PIZZA = prompt("Hoeveel Large Size pizza's wilt u?");
+		while(isNaN(LARGE_PIZZA)){
+			LARGE_PIZZA = prompt("Geen getal ingevoerd. Probeer het opnieuw: ");
+		}
+
+		// De hoeveelheid vermenigvuldigen met de prijs
+		const SMALL = Number(SMALL_PIZZA) * 8;
+		const MEDIUM = Number(MEDIUM_PIZZA) * 10;
+		const LARGE = Number(LARGE_PIZZA) * 13;
+		// Alles bij elkaar optellen
+		const TOTAAL = Number(SMALL) + Number(MEDIUM) + Number(LARGE);
+
+		// Per afmeting de hoeveelheid prijs tonen + totaal prijs
+		document.write("Kosten voor Small Pizza's in totaal: " + SMALL + "<br>");
+		document.write("Kosten voor Medium Pizza's in totaal: " + MEDIUM + "<br>");
+		document.write("Kosten voor Large Pizza's in totaal: " + LARGE + "<br>");
+		document.write("<br>Kosten in totaal: " + TOTAAL + "</br>");
+
+		}
+		</script>
+</body>
+</html>
