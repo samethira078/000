@@ -124,7 +124,8 @@
 		<h1> KOSTEN PIZZA'S </h1><br>
 		<b> Small: </b> €8<br>
 		<b>	Medium: </b> €10<br>
-		<b>	Large: </b> €13<br>
+		<b>	Large: </b> €13<br><br>
+		<b>	Gratis verzending vanaf </b> €50<br>
 		<br>
 		<button onclick="pizzaBerekenen()">Pizza bestellen</button>
 		<script>
@@ -148,15 +149,23 @@
 		const SMALL = Number(SMALL_PIZZA) * 8;
 		const MEDIUM = Number(MEDIUM_PIZZA) * 10;
 		const LARGE = Number(LARGE_PIZZA) * 13;
+		const VERZENDKOSTEN = 3.99;
 		// Alles bij elkaar optellen
-		const TOTAAL = Number(SMALL) + Number(MEDIUM) + Number(LARGE);
+		const OPGETELD = Number(SMALL) + Number(MEDIUM) + Number(LARGE);
+		// Alles opgetald + verzendkosten
+		const TOTAAL = OPGETELD + VERZENDKOSTEN;
 
-		// Per afmeting de hoeveelheid prijs tonen + totaal prijs
-		document.write("Kosten voor Small Pizza's in totaal: " + SMALL + "<br>");
-		document.write("Kosten voor Medium Pizza's in totaal: " + MEDIUM + "<br>");
-		document.write("Kosten voor Large Pizza's in totaal: " + LARGE + "<br>");
-		document.write("<br>Kosten in totaal: " + TOTAAL + "</br>");
-
+		// Checken of de bestelling onder de 50 is, zo niet, optie twee zonder verzendkosten gebruiken
+		if(OPGETELD < 50 || !OPGETELD > 50){
+		document.write("Kosten voor Small Pizza's in totaal: €" + SMALL + "<br>");
+		document.write("Kosten voor Medium Pizza's in totaal: €" + MEDIUM + "<br>");
+		document.write("Kosten voor Large Pizza's in totaal: €" + LARGE + "<br>");
+		document.write("<br>Totaal: €" + OPGETELD + " met verzendkosten van €" + VERZENDKOSTEN + " = €" + TOTAAL + "</br>");} 
+		else{
+		document.write("Kosten voor Small Pizza's in totaal: €" + SMALL + "<br>");
+		document.write("Kosten voor Medium Pizza's in totaal: €" + MEDIUM + "<br>");
+		document.write("Kosten voor Large Pizza's in totaal: €" + LARGE + "<br>");
+		document.write("<br>Totaal: €" + OPGETELD + "</br>");}
 		}
 		</script>
 </body>
